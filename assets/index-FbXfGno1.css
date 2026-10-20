@@ -20,3 +20,56 @@ nav, [role="toolbar"], [data-dock], .dock, .app-dock {
 html, body, button, input, textarea {
   font-family: Ubuntu, "Noto Sans", "DejaVu Sans", Arial, sans-serif;
 }
+
+
+/* User-requested soft gradient wallpaper + Ubuntu-inspired horizontal taskbar */
+.cdp-root,
+.cdp-root .cdp-desktop,
+.cdp-root .cdp-workspace,
+.cdp-root .cdp-wallpaper {
+  background-color: #e8f8df !important;
+}
+.cdp-root .cdp-wallpaper {
+  background-image: url("./soft-gradient-background.png") !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+/* Horizontal bottom taskbar, replacing the vertical macOS-like dock */
+.cdp-root .cdp-dock {
+  position: absolute !important;
+  left: 50% !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: 10px !important;
+  transform: translateX(-50%) !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: max-content !important;
+  max-width: calc(100% - 24px) !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  padding: 8px 10px !important;
+  gap: 7px !important;
+  border-radius: 16px !important;
+  background: rgba(43, 25, 45, .88) !important;
+  border: 1px solid rgba(255,255,255,.52) !important;
+  box-shadow: 0 8px 28px rgba(32, 25, 38, .22) !important;
+  backdrop-filter: blur(18px) saturate(1.2) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.2) !important;
+}
+.cdp-root .cdp-dock-btn {
+  flex: 0 0 auto !important;
+  border-radius: 10px !important;
+}
+@media (max-width: 640px) {
+  .cdp-root .cdp-dock {
+    bottom: 7px !important;
+    max-width: calc(100% - 14px) !important;
+    padding: 6px !important;
+    gap: 4px !important;
+  }
+}
